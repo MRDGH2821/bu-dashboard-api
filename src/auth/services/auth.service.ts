@@ -6,4 +6,9 @@ export class AuthService {
   constructor(
     @Inject(SERVICES.USER) private readonly userService: IUserService,
   ) { }
+
+  validateUser(){
+    
+  }
+
 }
