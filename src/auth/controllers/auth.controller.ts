@@ -3,16 +3,15 @@ import { ROUTES } from '../../utils/constants';
 
 @Controller(ROUTES.AUTH)
 export class AuthController {
-
   @Get('login')
-  login() { }
+  login() {}
 
   @Get('redirect')
-  redirect() { }
+  redirect() {}
 
   @Get('status')
-  status() { }
+  status() {}
 
   @Post('logout')
-  logout() { }
+  logout() {}
 }

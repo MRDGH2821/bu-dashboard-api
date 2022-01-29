@@ -5,10 +5,7 @@ import { IUserService } from '../../user/interfaces/user';
 export class AuthService {
   constructor(
     @Inject(SERVICES.USER) private readonly userService: IUserService,
-  ) { }
+  ) {}
 
-  validateUser(){
-    
-  }
-
+  validateUser() {}
 }
