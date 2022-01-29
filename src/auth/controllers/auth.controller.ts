@@ -9,12 +9,14 @@ import { AuthenticatedGuard, DiscordAuthGuard } from '../utils/Guards';
 export class AuthController {
   @Get('login')
   @UseGuards(DiscordAuthGuard)
-  login() {}
+  login() {
+    console.log('At Login function');
+  }
 
   @Get('redirect')
   @UseGuards(DiscordAuthGuard)
   redirect(@Res() res: Response) {
-    res.redirect('http://localhost/menu');
+    res.redirect('http://localhost:3000/menu');
   }
 
   @Get('status')
@@ -25,5 +27,7 @@ export class AuthController {
   }
 
   @Post('logout')
-  logout() {}
+  logout() {
+    console.log('At logout function');
+  }
 }
