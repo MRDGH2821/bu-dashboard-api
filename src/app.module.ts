@@ -6,14 +6,15 @@ import { AuthService } from './auth/services/auth.service';
 import { UserModule } from './user/user.module';
 import { credential } from 'firebase-admin';
 import { FireormModule } from 'nestjs-fireorm';
-import { entities } from './fireorm';
+import { entities } from './utils/fireorm';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env.development',
     }),
-
+    PassportModule.register({ session: true }),
     FireormModule.forRoot({
       firestoreSettings: {
         projectId: process.env.FIRESTORE_PROJECT_ID,

@@ -1,4 +1,4 @@
-import { User } from 'src/fireorm/entities/User';
+import { User } from 'src/utils/fireorm/entities/User';
 import { UserDetails } from '../../utils/types';
 
 export interface IAuthService {
