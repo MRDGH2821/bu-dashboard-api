@@ -12,7 +12,7 @@ import { PassportModule } from '@nestjs/passport';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: '.env.development',
+      envFilePath: 'src/.env.development',
     }),
     PassportModule.register({ session: true }),
     FireormModule.forRoot({
