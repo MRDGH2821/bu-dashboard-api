@@ -4,4 +4,6 @@ import { Collection } from 'fireorm';
 export class User {
   id: string; //firebase auto generated
   discordId: string;
+  accessToken: string;
+  refreshToken: string;
 }

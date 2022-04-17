@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { refreshToken } from 'firebase-admin/app';
 import { IBaseRepository } from 'fireorm';
 
 import { InjectRepository } from 'nestjs-fireorm';
 import { User } from 'src/utils/fireorm/entities/User';
-import { UserDetails } from 'src/utils/types';
+import { UpdateUserDetails, UserDetails } from 'src/utils/types';
 import { IUserService } from '../interfaces/user';
 @Injectable()
 export class UserService implements IUserService {
@@ -25,5 +26,15 @@ export class UserService implements IUserService {
   findUser(discordId: string) {
     console.log('Finding User: ', discordId);
     return this.userRepository.findById(discordId);
+  }
+
+  updateUser(user: User, details: UpdateUserDetails) {
+    console.log('Update user');
+    const data = {
+      id: user.discordId,
+      accessToken: details.accessToken;
+      refreshToken: details.refreshToken
+    }
+    return this.userRepository.update(data);
   }
 }
